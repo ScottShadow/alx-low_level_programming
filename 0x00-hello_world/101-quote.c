@@ -12,11 +12,10 @@
 int main(void)
 {
 	int stlength;
-	char *sentence = "and that piece of art is useful\" - "
-			"Dora Korpar, 2015-10-19\n";
+	char *snt = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	stlength = strlen(sentence);
-	write(1, sentence, stlength);
+	stlength = strlen(snt);
+	write(1, snt, stlength);
 
 	return (1);
 }
