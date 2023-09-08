@@ -6,16 +6,16 @@
 */
 int main(void)
 {
-	int my_char = 48;
+	int my_var = 48;
 
-	while (my_char <= 57)
+	while (my_var <= 57)
 	{
-		putchar(my_char);
+		putchar(my_var);
 		if (my_char == 57)
 			break;
 		putchar(',');
 		putchar(' ');
-		my_char++;
+		my_var++;
 	}
 	putchar('\n');
 	return (0);
