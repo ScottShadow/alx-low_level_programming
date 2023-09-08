@@ -1,20 +1,20 @@
 #include <stdio.h>
 /**
  * main - Entry Point
- * Description: prints numbers in a unique way
+ * Description: prints double numbers as char in a unique combination
  * Return: Always 0
  */
 int main(void)
 {
-	int first, second;
+	int n1, n2;
 
-	for (first = 0; first < 9; first++)
+	for (n1 = 0; n1 < 9; n1++)
 	{
-		for (second = first + 1; second < 10; second++)
+		for (n2 = n1 + 1; n2 < 10; n2++)
 		{
-			putchar((char)(first + 48));
-			putchar((char)(second + 48));
-			if (!(first == 8 && second == 9))
+			putchar((char)(n1 + 48));
+			putchar((char)(n2 + 48));
+			if (!(n1 == 8 && n2 == 9))
 			{
 				putchar(',');
 				putchar(' ');
