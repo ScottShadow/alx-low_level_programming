@@ -6,12 +6,12 @@
 */
 int main(void)
 {
-	char my_char = '0';
+	int my_char = 48;
 
-	while (my_char <= '9')
+	while (my_char <= 57)
 	{
 		putchar(my_char);
-		if (my_char == '9')
+		if (my_char == 57)
 			break;
 		putchar(',');
 		putchar(' ');
