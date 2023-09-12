@@ -9,7 +9,7 @@ int main(void)
 	long int i = 1, j = 2, t, sum;
 
 	printf("1, 2, ");
-	for (t = 0; t < 50; t++)
+	for (t = 0; t < 48; t++)
 	{
 		sum = i + j;
 		printf("%ld", sum);
