@@ -14,15 +14,14 @@ void times_table(void)
 			if (product > 9)
 			{
 				tens = product / 10;
-				product = product % 10;
 				_putchar('0' + tens);
 			}
-			if (product > 9 && y != 0)
+			else if (y != 0)
 			{
 				_putchar(' ');
 			}
 
-			_putchar('0' + product);
+			_putchar('0' + (product % 10));
 
 			if (y != 9)
 			{
