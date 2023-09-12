@@ -21,6 +21,6 @@ int main(void)
 		if (sum < 4000000)
 			new_s = sum + new_s;
 	}
-	printf("%lld\n", new_s);
+	printf("%ld\n", new_s);
 	return (0);
 }
