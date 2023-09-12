@@ -13,7 +13,7 @@ int main(void)
 	{
 		sum = i + j;
 		printf("%ld", sum);
-		if (t != 49)
+		if (t != 48)
 			printf(", ");
 		else
 			printf("\n");
