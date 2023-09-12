@@ -17,7 +17,7 @@ void times_table(void)
 				product = product % 10;
 				_putchar('0' + tens);
 			}
-			else
+			if (product > 9 && y != 0)
 			{
 				_putchar(' ');
 			}
