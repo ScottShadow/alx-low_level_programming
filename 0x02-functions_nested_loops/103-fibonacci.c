@@ -6,8 +6,8 @@
  */
 int main(void)
 {
-	long long int new_s = 0, sum = 3;
-	long long int i = 1, j = 2;
+	long int new_s = 0, sum = 3;
+	long int i = 1, j = 2;
 
 	while (sum < 4000000)
 	{
