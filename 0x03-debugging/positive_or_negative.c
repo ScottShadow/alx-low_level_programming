@@ -1,22 +1,19 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "main.h"
 /**
- * main - Entry Point
- * Description: prints numbers in a unique way
+ * positive_or_negative - Test for sign
+ * Description: prints pos for + neg for - and 0 for z
  * Return: Always 0
+ * @n: integer to test
  */
-int main(void)
+void positive_or_negative(int n)
 {
-	int n;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
 	if (n > 0)
 		printf("%d is positive\n", n);
 	if (n < 0)
 		printf("%d is negative\n", n);
 	if (n == 0)
 		printf("%d is zero\n", n);
-	return (0);
 }
