@@ -4,6 +4,7 @@
 int main(void)
 {
     int numbers[] = {
+        -0210,
         0,
         1,
         -1,
@@ -11,7 +12,7 @@ int main(void)
         -42,
         123,
         -123,
-		100030,
+        100030,
         1000,
         -1000,
         987654321,
@@ -26,6 +27,7 @@ int main(void)
         printf("Printing number: %d\n", numbers[i]);
         print_number(numbers[i]);
         putchar('\n');
+        /* print_number(1263838776828252); */
     }
 
     return (0);
