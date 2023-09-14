@@ -24,7 +24,7 @@ int main(void)
 			t++;
 		}
 	}
-	printf("%ld ", arr[i - 1]);
+	printf("%ld", arr[i - 1]);
 	printf("\n");
 
 	return (0);
