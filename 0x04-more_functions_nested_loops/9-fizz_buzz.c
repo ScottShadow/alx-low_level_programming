@@ -25,7 +25,8 @@ int main(void)
 		if (i % 5 == 0 && i % 3 == 0)
 			printf("FizzBuzz");
 
-		putchar(' ');
+		if (i != 99)
+			putchar(' ');
 	}
 	putchar('\n');
 	return (0);
