@@ -10,10 +10,10 @@ void print_number(int n)
 	unsigned int n2, x, t2;
 
 	n2 = n;
-	if (n < 0)
+	if (n2 < 0)
 	{
 		_putchar('-');
-		n = -n;
+		n2 = -n2;
 	}
 	x = n2;
 
