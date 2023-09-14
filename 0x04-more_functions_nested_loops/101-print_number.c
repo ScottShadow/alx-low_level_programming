@@ -9,13 +9,13 @@ void print_number(int n)
 	unsigned int tmp = 1000000000;
 	unsigned int n2, x, t2;
 
-	n2 = n;
-	if (n2 < 0)
+	if (n < 0)
 	{
 		_putchar('-');
-		n2 = -n2;
+		n = -n;
 	}
-	x = n2;
+	n2 = n;
+	x = n;
 
 	while (tmp >= 10)
 	{
