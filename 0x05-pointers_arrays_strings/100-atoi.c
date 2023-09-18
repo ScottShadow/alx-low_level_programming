@@ -1,10 +1,14 @@
 #include "main.h"
-
+/**
+ * _atoi - convert a string to an integer.
+ * @s: the string to convert
+ * Return: integer value of the numbers found in the string
+ */
 int _atoi(char *s)
 {
 	char *temp;
 	int size = 0, isNeg = 1;
-	unsigned num = 0, count = 0;
+	unsigned int num = 0, count = 0;
 
 	temp = s;
 
