@@ -1,27 +1,27 @@
 #include "main.h"
-/**
- * _strcpy - copies the string pointed to by src,
- *  including the terminating null byte (\0),
- *   to the buffer pointed to by dest.
- *
- * @dest: the buffer to copy to
- * @src: the string to copy from
- *
- * Return: the pointer to dest
- */
-char *_strcpy(char *dest, char *src)
+
+int _atoi(char *s)
 {
-	char *ret = dest;
+	char *temp;
+	int size = 0, isNeg = 1;
+	int num = 0, count = 0;
 
-	while (*src != '\0')
+	temp = s;
+
+	while (*temp != '\0') /* loop through */
 	{
-		*dest = *src;
+		if (*temp == '-') /* change sign with each '-' flag */
+			isNeg *= -1;
 
-		dest++;
-		src++;
+		if (*temp >= 48 && *temp <= 57)
+		{
+			if (count > 0)
+				num = num * 10;
+			num = num + (*temp - 48);
+			count++;
+		}
+		size++;
+		temp++;
 	}
-	*dest = *src;
-	dest = ret;
-
-	return (dest);
+	return (isNeg * num);
 }
