@@ -21,7 +21,6 @@ void puts_half(char *str)
 	{
 		if (i >= (count / 2))
 			_putchar(*strp);
-
 		strp++;
 	}
 	_putchar('\n');
