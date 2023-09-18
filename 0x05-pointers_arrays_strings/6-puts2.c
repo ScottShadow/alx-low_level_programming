@@ -5,10 +5,19 @@
  */
 void puts2(char *str)
 {
+	int size = 0;
+	char *strp = str;
+
 	while (*str != '\0') /* loops until end of the string */
 	{
-		_putchar(*str);
-		str = str + 2; /* increment str, move up a char in the string */
+		size++;
+		str++; /* increment str, move up a char in the string */
+	}
+
+	for (int i = 0; i < size; i = i + 2)
+	{
+		_putchar(*strp);
+		strp = strp + 2;
 	}
 	_putchar('\n');
 }
