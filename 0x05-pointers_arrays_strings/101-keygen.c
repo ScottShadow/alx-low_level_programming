@@ -2,7 +2,10 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-
+/**
+ * main - entry point
+ * Return: Always 0
+ */
 int main(void)
 {
 	int i = 0, sum = 0, temp;
@@ -27,5 +30,6 @@ int main(void)
 			break;
 		}
 	}
+	free(pass);
 	return (0);
 }
