@@ -1,27 +1,31 @@
 #include "main.h"
-/**
- * _strcpy - copies the string pointed to by src,
- *  including the terminating null byte (\0),
- *   to the buffer pointed to by dest.
- *
- * @dest: the buffer to copy to
- * @src: the string to copy from
- *
- * Return: the pointer to dest
- */
-char *_strcpy(char *dest, char *src)
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int main(void)
 {
-	char *ret = dest;
+	int i = 0, sum = 0, temp;
+	int *pass = malloc(sizeof(int) * 1);
+	char p;
+	const int MAX_PASSWDSIZE = 2772;
 
-	while (*src != '\0')
+	srand(time(NULL));
+
+	for (i = 0; i < 100; i++)
 	{
-		*dest = *src;
+		*pass = rand() % 78;
+		p = *pass + '0';
+		sum = sum + p;
+		putchar(p);
 
-		dest++;
-		src++;
+		if ((MAX_PASSWDSIZE - sum) - '0' < 78)
+		{
+			temp = MAX_PASSWDSIZE - sum;
+			putchar(temp);
+			sum = sum + temp - '0';
+			break;
+		}
 	}
-	*dest = *src;
-	dest = ret;
-
-	return (dest);
+	return (0);
 }
