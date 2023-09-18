@@ -14,10 +14,12 @@ void puts2(char *str)
 		str++; /* increment str, move up a char in the string */
 	}
 
-	for (int i = 0; i < size; i = i + 2)
+	for (int i = 0; i < size; i++)
 	{
-		_putchar(*strp);
-		strp = strp + 2;
+		if (i % 2 == 0)
+			_putchar(*strp);
+
+		strp++;
 	}
 	_putchar('\n');
 }
