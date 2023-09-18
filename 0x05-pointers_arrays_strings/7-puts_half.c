@@ -5,23 +5,24 @@
  */
 void puts_half(char *str)
 {
-	int size = 0;
-	char *half_str = str;
+	int size = 0, i = 0, count;
+	char *strp = str;
 
 	while (*str != '\0') /* loops until end of the string */
 	{
 		size++;
-		str++; /* increment s, move up a char in the string */
+		str++; /* increment str, move up a char in the string */
 	}
-
+	count = size;
 	if (size % 2 != 0)
-		size--;
+		count++;
 
-	half_str = half_str + (size / 2);
-	while (*half_str != '\0')
+	for (i = 0; i < size; i++)
 	{
-		_putchar(*half_str);
-		half_str++;
+		if (i >= (count / 2))
+			_putchar(*strp);
+
+		strp++;
 	}
 	_putchar('\n');
 }
