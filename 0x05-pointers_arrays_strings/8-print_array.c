@@ -7,6 +7,11 @@
 void print_array(int *a, int n)
 {
 	int i = 0;
+	if (n <= 0)
+	{
+		putchar('\n');
+		return;
+	}
 
 	while (i < (n - 1))
 	{
@@ -16,4 +21,3 @@ void print_array(int *a, int n)
 
 	printf("%d\n", *(a + (n - 1)));
 }
-
