@@ -5,7 +5,7 @@
  */
 void puts2(char *str)
 {
-	int size = 0;
+	int size = 0, i = 0;
 	char *strp = str;
 
 	while (*str != '\0') /* loops until end of the string */
@@ -14,7 +14,7 @@ void puts2(char *str)
 		str++; /* increment str, move up a char in the string */
 	}
 
-	for (int i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
 		if (i % 2 == 0)
 			_putchar(*strp);
