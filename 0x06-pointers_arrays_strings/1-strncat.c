@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
-#include "main.h"
 /**
  * _strncat - concatenates two strings with a specified amount of characters @n
  * @dest: destination string
@@ -12,27 +10,25 @@ char *_strncat(char *dest, char *src, int n)
 {
 	int size = 0;
 	int counter = 0;
+	char *ret = dest;
 
 	while (*dest != '\0')
 	{
-		/* printf("counted dest++\n"); */
+		/* move to the end of dest */
 		size++;
 		dest++;
 	}
 
-	/* printf("size of source : %d\n", size); */
-	while (*src != '\0')
+	while (*src != '\0' && counter != n)
 	{
-		/* printf("set %c to %c\n", *dest, *src); */
+
 		*dest = *src;
 		dest++;
 		src++;
 		size++;
 		counter++;
-		if (counter == n)
-			break;
 	}
 
 	*dest = '\0'; /* end the string with a null terminator */
-	return (dest - size);
+	return (ret);
 }
