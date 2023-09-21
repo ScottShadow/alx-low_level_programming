@@ -17,7 +17,7 @@ int main(void)
 	_putchar('\n');
 	print_number(-98);
 	_putchar('\n');
-	print_number(-90200800);
+	print_number(-__INT_MAX__);
 	_putchar('\n');
 	return (0);
 }
