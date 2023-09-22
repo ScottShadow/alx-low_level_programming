@@ -69,5 +69,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[i] += 48;
 		rem = (rem + (arr1[i] - 48) + (arr2[i] - 48)) / 10;
 	}
+
 	return (output);
 }
