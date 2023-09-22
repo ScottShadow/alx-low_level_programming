@@ -6,8 +6,8 @@ void print_buffer(char *b, int size)
 {
 	int i = 0, j;
 	char *s = b;
-	/*double size2 = ceil(size / 10) * 10;*/
-
+	double size2 = ceil(size / 10) * 10;
+	printf("%f", size2);
 	for (i = 1; i <= size; i++)
 	{
 		if (i == 1)
