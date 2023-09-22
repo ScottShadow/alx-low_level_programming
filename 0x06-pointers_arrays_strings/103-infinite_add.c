@@ -1,7 +1,13 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+ * infinite_add - adds string
+ * @n1: string to add
+ * @n2: string to add
+ * @r: result string
+ * @size_r: size of result string
+ */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	char *output = r;
@@ -39,6 +45,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	for (i = 0; i < (size1 / 2) && size1 != 1; i++)
 	{
 		char temp = arr1[i];
+
 		arr1[i] = arr1[size1 - 1 - i];
 		arr1[size1 - 1 - i] = temp;
 	}
@@ -46,6 +53,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	for (i = 0; i < (size2 / 2) && size2 != 1; i++)
 	{
 		char temp = arr2[i];
+
 		arr2[i] = arr2[size2 - 1 - i];
 		arr2[size2 - 1 - i] = temp;
 	}
