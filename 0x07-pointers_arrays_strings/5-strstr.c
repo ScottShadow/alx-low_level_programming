@@ -16,7 +16,6 @@ char *_strstr(char *haystack, char *needle)
 	unsigned int count = 0;
 	char *h = haystack, *n = needle;
 
-	/*calculate the size of the needle*/
 	for (i = 0; needle[i] != '\0'; i++)
 		size++;
 
@@ -33,7 +32,7 @@ char *_strstr(char *haystack, char *needle)
 				n++;
 			}
 			else
-			{ /*if needle doesnt match next haystack reset*/
+			{
 				count = 0;
 				break;
 			}
