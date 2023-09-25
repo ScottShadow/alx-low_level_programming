@@ -1,6 +1,10 @@
 #include "main.h"
 #include <stdio.h>
-
+/**
+ * print_diagsums - prints the sum of digits on diagonals
+ * @a: the matrix array typecasted to (int*)
+ * @size: the size x of the matrix[x][x]
+ */
 void print_diagsums(int *a, int size)
 {
 	int i, sum1 = 0, sum2 = 0;
