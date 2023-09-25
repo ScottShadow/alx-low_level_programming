@@ -12,8 +12,8 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned long int i, size = 0;
-	unsigned long int count = 0;
+	int i, size = 0;
+	int count = 0;
 	char *h = haystack, *n = needle;
 
 	for (i = 0; needle[i] != '\0'; i++)
