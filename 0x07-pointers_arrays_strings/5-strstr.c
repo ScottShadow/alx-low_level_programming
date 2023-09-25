@@ -12,12 +12,7 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i, size = 0;
-	int count = 0;
 	char *h = haystack, *n = needle;
-
-	for (i = 0; needle[i] != '\0'; i++)
-		size++;
 
 	while (*haystack != '\0')
 	{
@@ -27,16 +22,11 @@ char *_strstr(char *haystack, char *needle)
 		{
 			if (*h == *n && *n != '\0')
 			{
-				count++;
 				h++;
 				n++;
 			}
-			else
-			{
-				count = 0;
-				break;
-			}
-			if (count == size)
+
+			if (*n == '\0')
 				return (haystack);
 		}
 
