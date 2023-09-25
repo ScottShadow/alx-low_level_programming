@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <string.h>
 
 /**
  * main - check the code
@@ -9,7 +10,7 @@
 int main(void)
 {
 	char *s = "asd\0asw\0das\0";
-	char *f = "d\0a";
+	char *f = "\0";
 	char *t;
 
 	t = _strstr(s, f);

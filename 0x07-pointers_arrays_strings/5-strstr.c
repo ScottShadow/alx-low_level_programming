@@ -1,5 +1,5 @@
-#include "main.h"
 #include <stddef.h>
+#include "main.h"
 /**
  * _strstr - locate a substring
  * @haystack: A pointer to the string you want to search
@@ -13,6 +13,11 @@
 char *_strstr(char *haystack, char *needle)
 {
 	char *h = haystack, *n = needle;
+
+	if (*needle == '\0')
+	{
+		return (haystack);
+	}
 
 	while (*haystack != '\0')
 	{
@@ -31,10 +36,10 @@ char *_strstr(char *haystack, char *needle)
 			}
 
 			if (*n == '\0')
-				return ((char *)haystack);
+				return (haystack);
 		}
 
 		haystack++;
 	}
-	return ("NULL");
+	return (NULL);
 }
