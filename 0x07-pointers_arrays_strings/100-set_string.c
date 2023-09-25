@@ -1,11 +1,10 @@
 #include "main.h"
 /**
  * set_string - sets string s to to
- * @s: the string to copy
- * @to: the destination string
+ * @s: the destination string to set
+ * @to: the string to copy
  */
 void set_string(char **s, char *to)
 {
-	to = *s;
-	to++;
+	*s = to;
 }
