@@ -29,6 +29,8 @@ char *movetodot(char *s)
  * wildcheck - compares string with wildcards
  * @s1: string to compare
  * @s2: string to compare to s1
+ * @size1: size of the first string
+ * @size2: size of the second string
  * Return: 1(Success) strings match, else 0(Fail)
  */
 int wildcheck(char *s1, char *s2, int size1, int size2)
