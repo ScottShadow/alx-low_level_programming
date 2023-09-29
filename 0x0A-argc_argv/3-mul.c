@@ -1,10 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * main - entry point
+ * main - finds Product of two arguements passed
  * @argc: number of arguements passed
  * @argv: array of arguements passed
- * Return: Product of two arguements passed
+ * Return: 0 (success) else 1(Fail)
  */
 int main(int argc, char *argv[])
 {
@@ -12,6 +12,12 @@ int main(int argc, char *argv[])
 	int a = 0, b = 0, product = 0;
 	int aisneg = 0, bisneg = 0;
 	(void)argc;
+
+	if (argc != 3)
+	{
+		printf("Error");
+		return (1);
+	}
 
 	for (i = 0; argv[1][i] != '\0'; i++)
 	{
