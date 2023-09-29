@@ -18,7 +18,6 @@ int main(int argc, char *argv[])
 		return (-1);
 	}
 	a = atoi(argv[1]);
-	printf("%d\n", a);
 	if (a < 0)
 	{
 		printf("0\n");
