@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		printf("Error");
-		return (-1);
+		return (1);
 	}
 	a = atoi(argv[1]);
 	if (a < 0)
