@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - computes number of change to give
  * @argc: counts the number of arguments passed
@@ -8,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, j, a = 0, count = 0;
+	int j, a = 0, count = 0;
 	int change[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
@@ -16,16 +17,12 @@ int main(int argc, char *argv[])
 		printf("Error");
 		return (-1);
 	}
-	for (i = 0; argv[1][i] != '\0'; i++)
+	a = atoi(argv[1]);
+	printf("%d\n", a);
+	if (a < 0)
 	{
-		if (!(argv[1][i] >= '0' && argv[1][i] <= '9'))
-		{
-			printf("Error\n");
-			return (1);
-		}
-
-		a *= 10;
-		a = a + (argv[1][i] - '0');
+		printf("0\n");
+		return (1);
 	}
 	for (j = 0; a != 0; j++)
 	{
