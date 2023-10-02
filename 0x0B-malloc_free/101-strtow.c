@@ -27,7 +27,6 @@ char **strtow(char *str)
 			size++;
 		if (str[k] != ' ' && (str[k + 1] == ' ' || str[k + 1] == '\0'))
 		{
-			printf("size : %d\n", size);
 			s[j] = malloc(sizeof(char) * size + 1);
 			if (s[j] == NULL)
 				return (NULL);
