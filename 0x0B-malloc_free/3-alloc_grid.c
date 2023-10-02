@@ -2,15 +2,15 @@
 #include <stdlib.h>
 /**
  * _free_all - frees extra memory from the grid
- * @i: amount of paramaters to free
+ * @height: amount of paramaters to free
  * @grid: the grid to free
  */
-void _free_all(int i, int **grid)
+void _free_all(int **grid, int height)
 {
 	int j;
 
-	for (j = 0; j <= i; j++)
-		free(grid[i]);
+	for (j = 0; j < height; j++)
+		free(grid[j]);
 	free(grid);
 }
 /**
@@ -35,8 +35,7 @@ int **alloc_grid(int width, int height)
 		grid[i] = (int *)malloc(sizeof(int) * width);
 		if (grid[i] == NULL)
 		{
-			_free_all(i, grid);
-			free(grid);
+			_free_all(grid, i);
 			return (NULL);
 		}
 	}

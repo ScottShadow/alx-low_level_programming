@@ -9,6 +9,8 @@ int _strlen(char *s)
 {
 	int size = 0;
 
+	if (s == NULL)
+		return (0);
 	while (*s != '\0') /* loops until end of the string */
 	{
 		size++;
