@@ -19,7 +19,6 @@ char **strtow(char *str)
 	}
 	if (wc == 0)
 		return (NULL);
-
 	s = (char **)malloc(sizeof(char *) * (wc + 1));
 	if (s == NULL)
 		return (NULL);
