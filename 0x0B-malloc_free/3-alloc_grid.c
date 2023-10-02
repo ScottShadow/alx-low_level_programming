@@ -1,6 +1,19 @@
 #include "main.h"
 #include <stdlib.h>
 /**
+ * _free_all - frees extra memory from the grid
+ * @i: amount of paramaters to free
+ * @grid: the grid to free
+ */
+void _free_all(int i, int **grid)
+{
+	int j;
+
+	for (j = 0; j <= i; j++)
+		free(grid[i]);
+	free(grid);
+}
+/**
  * alloc_grid - returns a pointer to a 2 dimensional array of integers.
  * @width: the number of collumns
  * @height: the number of rows
@@ -22,6 +35,7 @@ int **alloc_grid(int width, int height)
 		grid[i] = (int *)malloc(sizeof(int) * width);
 		if (grid[i] == NULL)
 		{
+			_free_all(i, grid);
 			free(grid);
 			return (NULL);
 		}
