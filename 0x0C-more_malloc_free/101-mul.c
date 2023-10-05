@@ -8,8 +8,8 @@
  */
 int main(int argc, char *argv[])
 {
-	long long int i, j;
-	long long int a = 0, b = 0, product = 0;
+	unsigned long int i, j;
+	unsigned long int a = 0, b = 0, product = 0;
 	int aisneg = 0, bisneg = 0;
 	(void)argc;
 
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	if ((aisneg == 1 || bisneg == 1) && (aisneg != bisneg))
 		product = -product;
 
-	printf("%d\n", product);
+	printf("%ld\n", product);
 
 	return (0);
 }
