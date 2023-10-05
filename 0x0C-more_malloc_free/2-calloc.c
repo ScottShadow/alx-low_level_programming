@@ -11,12 +11,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	char *p;
 	unsigned int i;
 
+	/*if zero, nothing to initialize*/
 	if (size == 0 || nmemb == 0)
 		return (NULL);
+	/*malloc with null check*/
 	p = malloc(size * nmemb);
 	if (p == NULL)
 		return (NULL);
-
+	/*assigning all values of p to zero(0)*/
 	for (i = 0; i < size; i++)
 	{
 		p[i] = 0;
