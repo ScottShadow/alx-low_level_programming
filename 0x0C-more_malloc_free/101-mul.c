@@ -8,8 +8,8 @@
  */
 int main(int argc, char *argv[])
 {
-	unsigned long int i, j;
-	unsigned long int a = 0, b = 0, product = 0;
+	long long int i, j;
+	long long int a = 0, b = 0, product = 0;
 	int aisneg = 0, bisneg = 0;
 	(void)argc;
 
