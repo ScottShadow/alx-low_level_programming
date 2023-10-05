@@ -19,8 +19,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (p == NULL)
 		return (NULL);
 	/*assigning all values of p to zero(0)*/
-	for (i = 0; i < size; i++)
-		p[i] = (char)0;
+	for (i = 0; i < nmemb; i++)
+		p[i] = 0;
 
 	return (p);
 }
