@@ -42,8 +42,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		size1 = 0;
 		s1 = "";
 	}
+
 	size2 = _strlen(s2);
-	if (size2 <= n)
+	if (n >= size2)
 		n = size2;
 
 	newsize = ((sizeof(char)) * (n + size1 + 1));
@@ -59,6 +60,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	for (i = size1; i < newsize - 1; i++)
 		*(temp + i) = *(s2++);
-	temp[newsize] = '\0';
+	temp[i] = '\0';
 	return (temp);
 }
