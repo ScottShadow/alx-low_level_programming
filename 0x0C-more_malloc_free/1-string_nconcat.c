@@ -34,16 +34,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *temp;
 
 	if (s1 != NULL)
-	{
 		size1 = _strlen(s1);
-	}
 	else
-	{
 		size1 = 0;
-		s1 = "";
-	}
 
-	size2 = _strlen(s2);
+	if (s2 != NULL)
+		size2 = _strlen(s2);
+	else
+		size1 = 0;
 	if (n >= size2)
 		n = size2;
 
