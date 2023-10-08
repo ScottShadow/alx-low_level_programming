@@ -14,22 +14,24 @@ void print_buffer(char *b, int size)
 	for (i = 1; i <= size2; i++)
 	{
 		if (i > size)
-			printf("hh"); /* why is this no being fulfilled*/
+			*b = 0;
 		if (i == 1)
 			printf("%08x: ", i - 1);
-		if (i <= size)
+		if (i <= size2 && i <= size)
 			printf("%02x", *b);
+		else
+			printf("  ");
 
 		if (i % 2 == 0)
 			printf(" ");
 
-		if ((i % 10 == 0 || i == size) && i <= size)
+		if ((i % 10 == 0 || i == size2) && i <= size2)
 		{
 
 			for (j = 0; j < 10; j++)
 			{
 
-				if (j == (size % 10) && i == size)
+				if (j == (size % 10) && i > size)
 					break;
 				if (*s >= 32 && *s <= 126)
 					putchar(*s);
