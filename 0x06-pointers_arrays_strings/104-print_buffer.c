@@ -26,14 +26,12 @@ void print_buffer(char *b, int size)
 			printf("%02x", *b);
 		else
 			printf("  ");
-
 		if (i % 2 == 0)
 			printf(" ");
-
 		if ((i % 10 == 0 || i == size2) && i <= size2)
 		{
 
-			for (j = 0; j < 10; j++)
+			for (j = 0; j < 10; j++, s++)
 			{
 
 				if (j == (size % 10) && i > size)
@@ -42,7 +40,6 @@ void print_buffer(char *b, int size)
 					putchar(*s);
 				else
 					putchar('.');
-				s++;
 			}
 			printf("\n");
 			if (i % 10 == 0 && i != 1 && i != size2)
