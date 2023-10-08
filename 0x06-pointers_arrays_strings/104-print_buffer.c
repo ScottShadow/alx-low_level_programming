@@ -11,6 +11,11 @@ void print_buffer(char *b, int size)
 	char *s = b;
 	int size2 = ((size / 10) * 10) + 10;
 
+	if (size <= 0)
+	{
+		printf("\n");
+		return;
+	}
 	for (i = 1; i <= size2; i++)
 	{
 		if (i > size)
