@@ -7,16 +7,19 @@
  */
 void print_buffer(char *b, int size)
 {
-	int i = 0, j;
+	int i = 0, j, size2 = size;
 	char *s = b;
-	int size2 = ((size / 10) * 10) + 10;
 
 	if (size <= 0)
 	{
 		printf("\n");
 		return;
 	}
-	for (i = 1; i <= size2; i++)
+	else if (size % 10 != 0)
+	{
+		size2 = ((size / 10) * 10) + 10;
+	}
+	for (i = 1; i <= size2; i++, b++)
 	{
 		if (i > size)
 			*b = 0;
@@ -30,10 +33,8 @@ void print_buffer(char *b, int size)
 			printf(" ");
 		if ((i % 10 == 0 || i == size2) && i <= size2)
 		{
-
 			for (j = 0; j < 10; j++, s++)
 			{
-
 				if (j == (size % 10) && i > size)
 					break;
 				if (*s >= 32 && *s <= 126)
@@ -42,9 +43,8 @@ void print_buffer(char *b, int size)
 					putchar('.');
 			}
 			printf("\n");
-			if (i % 10 == 0 && i != 1 && i != size2)
+			if ((i % 10) == 0 && i != 1 && i != size2)
 				printf("%08x: ", i);
 		}
-		b++;
 	}
 }
