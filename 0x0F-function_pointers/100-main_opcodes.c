@@ -8,16 +8,10 @@
  */
 int main(int argc, char *argv[])
 {
-	int number_bytes, count = 0;
+	unsigned int number_bytes, count = 0;
 	int (*p)(int, char *[]) = main;
-
-	if (p == NULL)
-		return (1);
-
 	unsigned char *ptr_opcode = (unsigned char *)p;
 
-	if (ptr_opcode == NULL)
-		return (1);
 	number_bytes = atoi(argv[1]);
 	if (argc != 2)
 	{
@@ -25,7 +19,7 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	if (number_bytes < 0)
+	if (number_bytes < 0 || argv[1][0] == '-')
 	{
 		printf("Error\n");
 		exit(2);
