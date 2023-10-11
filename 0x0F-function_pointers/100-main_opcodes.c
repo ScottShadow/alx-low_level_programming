@@ -11,12 +11,7 @@ int main(int argc, char *argv[])
 	int i, count = 0;
 	int (*p)(int, char *[]) = main;
 
-	if (p == NULL)
-		return (1);
 	unsigned char *ptr_opcode = (unsigned char *)p;
-
-	if (ptr_opcode == NULL)
-		return (1);
 
 	if (argc != 2)
 	{
@@ -33,8 +28,10 @@ int main(int argc, char *argv[])
 
 	while (count < i)
 	{
-		printf("%02x ", *ptr_opcode++);
+		printf("%02x ", *ptr_opcode);
 		count++;
+		if (count < i)
+			++ptr_opcode;
 	}
 	if (i != 0)
 		printf("\n");
