@@ -9,15 +9,14 @@
 int main(int argc, char *argv[])
 {
 	int (*p)(int, char *[]) = main;
-	unsigned int i, count = 0;
+	unsigned long int i, count = 0;
 
 	if (p == NULL)
-		return (-1);
+		return (1);
 	unsigned char *ptr_opcode = (unsigned char *)p;
 
 	if (ptr_opcode == NULL)
 	{
-		free(p);
 		return (-1);
 	}
 	if (argc != 2)
