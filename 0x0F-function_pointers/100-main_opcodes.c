@@ -12,11 +12,14 @@ int main(int argc, char *argv[])
 	unsigned int i, count = 0;
 
 	if (p == NULL)
-		return (1);
+		return (-1);
 	unsigned char *ptr_opcode = (unsigned char *)p;
 
 	if (ptr_opcode == NULL)
-		return (1);
+	{
+		free(p);
+		return (-1);
+	}
 	if (argc != 2)
 	{
 		printf("Error\n");
