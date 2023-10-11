@@ -12,11 +12,11 @@ int main(int argc, char *argv[])
 	int (*p)(int, char *[]) = main;
 
 	if (p == NULL)
-		exit(1);
+		return (1);
 	unsigned char *ptr_opcode = (unsigned char *)p;
 
 	if (ptr_opcode == NULL)
-		exit(1);
+		return (1);
 
 	if (argc != 2)
 	{
