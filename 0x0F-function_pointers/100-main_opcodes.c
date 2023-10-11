@@ -23,19 +23,20 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(1);
 	}
-	if (argv[1][0] == '-')
+
+	i = atoi(argv[1]);
+	if (i < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-	i = atoi(argv[1]);
 
 	while (count < i)
 	{
 		printf("%02x ", *ptr_opcode++);
 		count++;
 	}
-
-	printf("\n");
+	if (i != 0)
+		printf("\n");
 	return (0);
 }
