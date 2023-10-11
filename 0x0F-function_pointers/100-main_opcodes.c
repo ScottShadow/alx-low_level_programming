@@ -26,8 +26,10 @@ int main(int argc, char *argv[])
 
 	while (count < i)
 	{
-		printf("%02x ", *ptr_opcode++);
+		printf("%02x", *ptr_opcode++);
 		count++;
+		if (count < i)
+			printf(" ");
 	}
 
 	printf("\n");
