@@ -40,7 +40,6 @@ int main(int argc, char *argv[])
 		if (count < number_bytes)
 			++ptr_opcode;
 	}
-	if (number_bytes != 0)
-		printf("\n");
+	printf("\n");
 	return (0);
 }
