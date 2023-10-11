@@ -11,8 +11,13 @@ int main(int argc, char *argv[])
 	int i, count = 0;
 	int (*p)(int, char *[]) = main;
 
+	if (p == NULL)
+		return (1);
+
 	unsigned char *ptr_opcode = (unsigned char *)p;
 
+	if (ptr_opcode == NULL)
+		return (1);
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -20,6 +25,8 @@ int main(int argc, char *argv[])
 	}
 
 	i = atoi(argv[1]);
+	if (i == 0)
+		return (1);
 	if (i < 0)
 	{
 		printf("Error\n");
@@ -33,7 +40,6 @@ int main(int argc, char *argv[])
 		if (count < i)
 			++ptr_opcode;
 	}
-	if (i != 0)
-		printf("\n");
+	printf("\n");
 	return (0);
 }
