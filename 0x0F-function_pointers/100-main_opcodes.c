@@ -8,36 +8,39 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, count = 0;
+	int number_bytes, count = 0;
 	int (*p)(int, char *[]) = main;
 
 	if (p == NULL)
 		return (1);
 
-	unsigned char *ptr_opcode = (unsigned char *)p;
+	unsigned char *ptr_opcode = (char *)p;
 
 	if (ptr_opcode == NULL)
 		return (1);
+	number_bytes = atoi(argv[1]);
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
 
-	i = atoi(argv[1]);
-	if (i < 0 || i == 0)
+	if (number_bytes < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
 
-	while (count < i)
+	while (count < number_bytes)
 	{
-		printf("%02x ", *ptr_opcode);
+		printf("%02x", *ptr_opcode);
 		count++;
-		if (count < i)
+		if (count < number_bytes)
+			printf(" ");
+		if (count < number_bytes)
 			++ptr_opcode;
 	}
-	printf("\n");
+	if (number_bytes != 0)
+		printf("\n");
 	return (0);
 }
