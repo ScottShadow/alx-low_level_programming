@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	if (p == NULL)
 		return (1);
 
-	unsigned char *ptr_opcode = (char *)p;
+	unsigned char *ptr_opcode = (unsigned char *)p;
 
 	if (ptr_opcode == NULL)
 		return (1);
