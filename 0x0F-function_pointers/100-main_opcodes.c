@@ -6,6 +6,16 @@ int main(int argc, char *argv[])
 	unsigned int i, count = 0;
 	unsigned char *ptr_opcode = (unsigned char *)p;
 
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
+	if (argv[1][0] == '-')
+	{
+		printf("Error\n");
+		exit(2);
+	}
 	i = atoi(argv[1]);
 
 	while (count < i)
