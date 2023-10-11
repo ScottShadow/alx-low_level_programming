@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
 		if (count < number_bytes)
 			++ptr_opcode;
 	}
-	printf("\n");
+	if (number_bytes != 0)
+		printf("\n");
 	return (0);
 }
