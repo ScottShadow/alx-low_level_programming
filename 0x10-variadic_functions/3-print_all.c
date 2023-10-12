@@ -13,7 +13,6 @@ void print_all(const char *const format, ...)
 	va_start(stuff, format);
 	while (format[i] != '\0' && format != NULL)
 	{
-		skipped = 0;
 		switch (format[i++])
 		{
 		case 'c':
@@ -41,8 +40,9 @@ void print_all(const char *const format, ...)
 			skipped = 1;
 			break;
 		}
-		if (format[i] != '\0' && skipped != 1)
+		if (format[i] != '\0' && skipped-- != 1)
 			printf(", ");
 	}
 	printf("\n");
+	va_end(stuff);
 }
