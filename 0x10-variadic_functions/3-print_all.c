@@ -7,7 +7,7 @@ void print_all(const char *const format, ...)
 {
 	va_list stuff;
 	int i = 0;
-	char *str, sep = "";
+	char *str, *sep = "";
 
 	va_start(stuff, format);
 	if (format)
