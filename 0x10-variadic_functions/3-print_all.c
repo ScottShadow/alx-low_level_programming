@@ -10,7 +10,7 @@ void print_all(const char *const format, ...)
 	char *str;
 
 	va_start(stuff, format);
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format != NULL)
 	{
 		switch (format[i++])
 		{
@@ -34,7 +34,7 @@ void print_all(const char *const format, ...)
 			break;
 		default:
 			skipped = 1;
-			continue;
+			break;
 		}
 		if (format[i] != '\0' && skipped-- != 1)
 			printf(", ");
