@@ -1,6 +1,5 @@
 #include "variadic_functions.h"
 #include <stdio.h>
-#include <stddef.h>
 #include <stdarg.h>
 /**
  * print_all - prints all arguements passed
