@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 /**
  * print_all - prints all arguements passed
- * @format: the format of the arguements in order, supports (cifs)
+ * @format: the format of the arguements in order, supports (icfs)
  */
 void print_all(const char *const format, ...)
 {
@@ -11,7 +11,7 @@ void print_all(const char *const format, ...)
 	char *str, c;
 
 	va_start(stuff, format);
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format != NULL)
 	{
 		skipped = 0;
 		switch (format[i++])
