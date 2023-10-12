@@ -40,5 +40,6 @@ void print_all(const char *const format, ...)
 		if (format[i] != '\0' && skipped != 1)
 			printf(", ");
 	}
+	va_end(stuff);
 	printf("\n");
 }
