@@ -6,7 +6,7 @@
 void print_all(const char *const format, ...)
 {
 	va_list stuff;
-	int n, skipped, i = 0;
+	long int n, skipped, i = 0;
 	float f;
 	char *str, c;
 
@@ -22,7 +22,7 @@ void print_all(const char *const format, ...)
 			break;
 		case 'i':
 			n = va_arg(stuff, int);
-			printf("%d", n);
+			printf("%ld", n);
 			break;
 		case 'f':
 			f = va_arg(stuff, double);
