@@ -10,9 +10,9 @@ void print_all(const char *const format, ...)
 	char *str;
 
 	va_start(stuff, format);
-	while (format[i] != '\0' && format != NULL)
+	while (format[i] != '\0' && format)
 	{
-		switch (format[i++])
+		switch (format[i])
 		{
 		case 'c':
 			printf("%c", va_arg(stuff, int));
@@ -34,8 +34,10 @@ void print_all(const char *const format, ...)
 			break;
 		default:
 			skipped = 1;
-			break;
+			i++;
+			continue;
 		}
+		i++;
 		if (format[i] != '\0' && skipped-- != 1)
 			printf(", ");
 	}
