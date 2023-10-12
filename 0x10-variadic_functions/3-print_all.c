@@ -6,16 +6,15 @@
 void print_all(const char *const format, ...)
 {
 	va_list stuff;
-	int n, skipped, type = 0, i = 0;
+	int n, skipped, i = 0;
 	float f;
 	char *str, c;
 
 	va_start(stuff, format);
 	while (format[i] != '\0')
 	{
-		type = format[i++];
 		skipped = 0;
-		switch (type)
+		switch (format[i++])
 		{
 		case 'c':
 			c = va_arg(stuff, int);
