@@ -30,7 +30,12 @@ void print_all(const char *const format, ...)
 			break;
 		case 's':
 			str = va_arg(stuff, char *);
-			str == NULL ? printf("(nil)") : printf("%s", str);
+			if (str == NULL)
+			{
+				printf("(nil)");
+				break;
+			}
+			printf("%s", str);
 			break;
 		default:
 			skipped = 1;
@@ -39,6 +44,5 @@ void print_all(const char *const format, ...)
 		if (format[i] != '\0' && skipped != 1)
 			printf(", ");
 	}
-	va_end(stuff);
 	printf("\n");
 }
