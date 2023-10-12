@@ -31,10 +31,7 @@ void print_all(const char *const format, ...)
 			break;
 		case 's':
 			str = va_arg(stuff, char *);
-			if (str == NULL)
-				printf("(nil)");
-			else
-				printf("%s", str);
+			str == NULL ? printf("(nil)") : printf("%s", str);
 			break;
 		default:
 			skipped = 1;
