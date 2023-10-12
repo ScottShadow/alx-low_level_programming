@@ -1,4 +1,7 @@
 #include "variadic_functions.h"
+#include <stdio.h>
+#include <stddef.h>
+#include <stdarg.h>
 /**
  * print_all - prints all arguements passed
  * @format: the format of the arguements in order, supports (icfs)
@@ -26,7 +29,7 @@ void print_all(const char *const format, ...)
 		case 's':
 			str = va_arg(stuff, char *);
 			if (str == NULL)
-				str == "(nil)";
+				str = "(nil)";
 			printf("%s", str);
 			break;
 		default:
