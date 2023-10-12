@@ -1,12 +1,14 @@
 #include "variadic_functions.h"
+/**
+ * print_all - prints all arguements passed
+ * @format: the format of the arguements in order, supports (cifs)
+ */
 void print_all(const char *const format, ...)
 {
 	va_list stuff;
-	int type = 0;
-	int n, i = 0, skipped;
-	char c;
+	int n, skipped, type = 0, i = 0;
 	float f;
-	char *str;
+	char *str, c;
 
 	va_start(stuff, format);
 	while (format[i] != '\0')
@@ -33,9 +35,11 @@ void print_all(const char *const format, ...)
 			printf("%s", str);
 			break;
 		default:
+			/* @skipped: allows to handle type mismatch*/
 			skipped = 1;
 			break;
 		}
+		/*prints separator if not at the end or if none were skipped*/
 		if (format[i] != '\0' && skipped != 1)
 			printf(", ");
 	}

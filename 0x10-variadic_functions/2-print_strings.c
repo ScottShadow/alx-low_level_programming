@@ -1,5 +1,9 @@
 #include "variadic_functions.h"
-
+/**
+ * print_strings - prints all strings passed
+ * @separator: separator to use
+ * @n: number of strings
+ */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	size_t i;
