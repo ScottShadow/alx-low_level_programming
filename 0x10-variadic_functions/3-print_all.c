@@ -6,7 +6,7 @@
 void print_all(const char *const format, ...)
 {
 	va_list stuff;
-	int skipped, i = 0;
+	int i = 0;
 	char *str;
 
 	va_start(stuff, format);
@@ -30,10 +30,10 @@ void print_all(const char *const format, ...)
 			printf("%s", str);
 			break;
 		default:
-			skipped = 1;
-			break;
+
+			continue;
 		}
-		if (format[i] != '\0' && skipped-- != 1)
+		if (format[i] != '\0')
 			printf(", ");
 	}
 	printf("\n");
