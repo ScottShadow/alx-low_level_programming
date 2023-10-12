@@ -5,12 +5,13 @@
  */
 void print_all(const char *const format, ...)
 {
-	va_list stuff;
 	int i = 0;
 	char *str, *sep = "";
 
+	va_list stuff;
+
 	va_start(stuff, format);
-	while (format[i] != '\0')
+	while (format[i])
 	{
 		switch (format[i++])
 		{
@@ -26,10 +27,7 @@ void print_all(const char *const format, ...)
 		case 's':
 			str = va_arg(stuff, char *);
 			if (str == NULL)
-			{
-				printf("%s(nil)", sep);
-				break;
-			}
+				str = "(nil)";
 			printf("%s%s", sep, str);
 			break;
 		default:
