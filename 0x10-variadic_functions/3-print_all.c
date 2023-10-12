@@ -13,8 +13,7 @@ void print_all(const char *const format, ...)
 	va_start(stuff, format);
 	while (format[i] != '\0')
 	{
-		type = format[i];
-		i++;
+		type = format[i++];
 		skipped = 0;
 		switch (type)
 		{
@@ -32,14 +31,16 @@ void print_all(const char *const format, ...)
 			break;
 		case 's':
 			str = va_arg(stuff, char *);
-			printf("%s", str);
+			if (str == NULL)
+				printf("(nil)");
+			else
+				printf("%s", str);
 			break;
 		default:
 			/* @skipped: allows to handle type mismatch*/
 			skipped = 1;
 			break;
 		}
-		/*prints separator if not at the end or if none were skipped*/
 		if (format[i] != '\0' && skipped != 1)
 			printf(", ");
 	}
