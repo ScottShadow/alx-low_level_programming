@@ -6,8 +6,8 @@
 void print_all(const char *const format, ...)
 {
 	va_list stuff;
-	int skipped, i = 0;
-	char *str;
+	int i = 0;
+	char *str, *sep = "";
 
 	va_start(stuff, format);
 	while (format[i] != '\0' && format != NULL)
@@ -15,29 +15,27 @@ void print_all(const char *const format, ...)
 		switch (format[i++])
 		{
 		case 'c':
-			printf("%c", va_arg(stuff, int));
+			printf("%s%c", sep, va_arg(stuff, int));
 			break;
 		case 'i':
-			printf("%d", va_arg(stuff, int));
+			printf("%s%d", sep, va_arg(stuff, int));
 			break;
 		case 'f':
-			printf("%f", va_arg(stuff, double));
+			printf("%s%f", sep, va_arg(stuff, double));
 			break;
 		case 's':
 			str = va_arg(stuff, char *);
 			if (str == NULL)
 			{
-				printf("(nil)");
+				printf("%s(nil)", sep);
 				break;
 			}
-			printf("%s", str);
+			printf("%s%s", sep, str);
 			break;
 		default:
-			skipped = 1;
 			break;
 		}
-		if (format[i] != '\0' && skipped-- != 1)
-			printf(", ");
+		sep = ", ";
 	}
 	printf("\n");
 	va_end(stuff);
