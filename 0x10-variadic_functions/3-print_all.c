@@ -35,7 +35,7 @@ void print_all(const char *const format, ...)
 		default:
 			skipped = 1;
 			i++;
-			continue;
+			break;
 		}
 		i++;
 		if (format[i] != '\0' && skipped-- != 1)
