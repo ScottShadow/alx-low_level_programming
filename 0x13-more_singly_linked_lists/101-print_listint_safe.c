@@ -9,8 +9,6 @@ size_t print_listint_safe(const listint_t *head)
 	int n = 0;
 	const listint_t *fast, *slow;
 
-	if (!head || head == NULL)
-		exit(98);
 	fast = head;
 	slow = head;
 
