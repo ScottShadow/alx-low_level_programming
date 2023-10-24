@@ -1,5 +1,4 @@
 #include "lists.h"
-#include "lists.h"
 /**
  * listint_len - returns the number of elements in a linked list
  * @h: pointer to head node
@@ -16,7 +15,6 @@ size_t listint_len(const listint_t *h)
 	}
 	return (n);
 }
-#include "lists.h"
 /**
  * insert_nodeint_at_index - inserts a new node at a given position.
  * @head: address of header node
