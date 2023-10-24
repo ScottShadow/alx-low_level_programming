@@ -45,7 +45,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			temp = p->next;
 			p->next = newnode;
 			newnode->next = temp;
-			free(p);
+			if (idx == 0)
+				free(p);
 		}
 	}
 
