@@ -17,7 +17,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (index == 1)
 			multiplier = 2;
-		if (b[(size - index)] >= '0' && b[(size - index)] <= '9')
+		if (b[(size - index)] >= '0' && b[(size - index)] <= '1')
 			newint += (b[(size - index)] - '0') * multiplier;
 		else
 		{
