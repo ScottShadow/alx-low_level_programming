@@ -10,9 +10,8 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int size, index, newint = 0;
 	unsigned int multiplier = 1;
 
-	if (!b || b == NULL)
+	if (!b || b == NULL || strlen(b) == 0)
 		return (0);
-
 	size = strlen(b) - 1;
 	index = 0;
 	while (index <= size)
