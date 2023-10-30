@@ -45,14 +45,12 @@ ssize_t read_and_copy_file(const char *from_filename,
 	ssize_t written_char, read_char;
 	char *buffer;
 
-	if (from_filename == NULL || to_filename == NULL)
-		return (1);
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
 		return (-1);
 
 	from_file = open(from_filename, O_RDONLY);
-	if (from_file == -1)
+	if (from_file == -1 || from_filename == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_filename);
 		free(buffer);
@@ -61,7 +59,7 @@ ssize_t read_and_copy_file(const char *from_filename,
 
 	to_file = open(to_filename, O_RDWR | O_CREAT | O_TRUNC, 0664);
 
-	if (from_file == -1)
+	if (to_file == -1 || to_filename == NULL)
 	{
 		free(buffer);
 		close(from_file);
