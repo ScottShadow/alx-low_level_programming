@@ -46,15 +46,15 @@ ssize_t read_and_copy_file(const char *from_filename,
 	char *buffer;
 
 	if (from_filename == NULL || to_filename == NULL)
-		return (-1);
+		return (1);
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
-		return (0);
+		return (-1);
 
 	from_file = open(from_filename, O_RDONLY);
 	if (from_file == -1)
 	{
-		dprintf(1, "Error: Can't read from file %s\n", from_filename);
+		dprintf(1, "Error: Can't read from file %s", from_filename);
 		free(buffer);
 		exit(98);
 	}
@@ -65,7 +65,7 @@ ssize_t read_and_copy_file(const char *from_filename,
 	{
 		free(buffer);
 		close(from_file);
-		dprintf(1, "Error: Can't write to %s\n", to_filename);
+		dprintf(1, "Error: Can't write to %s", to_filename);
 		exit(99);
 	}
 
@@ -77,7 +77,7 @@ ssize_t read_and_copy_file(const char *from_filename,
 			free(buffer);
 			close(to_file);
 			close(from_file);
-			dprintf(1, "Error: Can't write to %s\n", to_filename);
+			dprintf(1, "Error: Can't write to %s", to_filename);
 			exit(99);
 		}
 	}
@@ -103,13 +103,16 @@ ssize_t read_and_copy_file(const char *from_filename,
 
 	return (written_char);
 }
-
+/**
+ * main - entry point, cpy argv[1] content to argv[2]
+ * Return: 0(Success)
+ */
 int main(int argc, char **av)
 {
 	size_t buffsize = 1024;
 	if (argc != 3)
 	{
-		dprintf(STDOUT_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDOUT_FILENO, "Usage: cp file_from file_to");
 		exit(97);
 	}
 
