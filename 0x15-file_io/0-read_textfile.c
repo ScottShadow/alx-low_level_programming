@@ -20,14 +20,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	file_desc = open(filename, O_RDWR);
 	if (file_desc == -1)
 	{
-		printf("file desc error");
 		free(buffer);
 		return (0);
 	}
 	read_char = read(file_desc, buffer, letters);
 	if (read_char == -1)
 	{
-		printf("read error");
 		free(buffer);
 		close(file_desc);
 		return (0);
@@ -36,7 +34,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	printed_char = write(STDOUT_FILENO, buffer, read_char);
 	if (printed_char == -1)
 	{
-		printf("write error");
 		free(buffer);
 		close(file_desc);
 		return (0);
