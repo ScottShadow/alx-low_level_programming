@@ -105,16 +105,21 @@ ssize_t read_and_copy_file(const char *from_filename,
 }
 /**
  * main - entry point, cpy argv[1] content to argv[2]
+ * @argc: arg count
+ * @av: arg array
  * Return: 0(Success)
  */
 int main(int argc, char **av)
 {
 	size_t buffsize = 1024;
+
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
+	if (av[1] == NULL || av[2] == NULL)
+		return (-1);
 
 	read_and_copy_file(av[1], av[2], buffsize);
 	return (0);
