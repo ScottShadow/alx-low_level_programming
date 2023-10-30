@@ -54,7 +54,7 @@ ssize_t read_and_copy_file(const char *from_filename,
 	from_file = open(from_filename, O_RDONLY);
 	if (from_file == -1)
 	{
-		dprintf(1, "Error: Can't read from file %s\n", from_filename);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_filename);
 		free(buffer);
 		exit(98);
 	}
@@ -65,7 +65,7 @@ ssize_t read_and_copy_file(const char *from_filename,
 	{
 		free(buffer);
 		close(from_file);
-		dprintf(1, "Error: Can't write to %s\n", to_filename);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_filename);
 		exit(99);
 	}
 
@@ -77,7 +77,7 @@ ssize_t read_and_copy_file(const char *from_filename,
 			free(buffer);
 			close(to_file);
 			close(from_file);
-			dprintf(1, "Error: Can't write to %s\n", to_filename);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_filename);
 			exit(99);
 		}
 	}
@@ -92,12 +92,12 @@ ssize_t read_and_copy_file(const char *from_filename,
 	free(buffer);
 	if (close(to_file) == -1)
 	{
-		dprintf(1, "Error: Can't close fd %ld\n", to_file);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", to_file);
 		exit(100);
 	}
 	if (close(from_file) == -1)
 	{
-		dprintf(1, "Error: Can't close fd %ld\n", from_file);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", from_file);
 		exit(100);
 	}
 
@@ -112,7 +112,7 @@ int main(int argc, char **av)
 	size_t buffsize = 1024;
 	if (argc != 3)
 	{
-		dprintf(STDOUT_FILENO, "Usage: cp %s file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp %s file_to\n");
 		exit(97);
 	}
 
