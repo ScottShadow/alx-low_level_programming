@@ -47,7 +47,7 @@ ssize_t read_and_copy_file(const char *from_filename,
 
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
-		return (-1);
+		exit(-1);
 
 	from_file = open(from_filename, O_RDONLY);
 	if (from_file == -1 || from_filename == NULL)
@@ -78,13 +78,14 @@ ssize_t read_and_copy_file(const char *from_filename,
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_filename);
 			exit(99);
 		}
-	}
-	if (read_char == -1)
-	{
-		free(buffer);
-		close(to_file);
-		close(from_file);
-		return (0);
+		if (read_char == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_filename);
+			free(buffer);
+			close(to_file);
+			close(from_file);
+			exit(98);
+		}
 	}
 
 	free(buffer);
