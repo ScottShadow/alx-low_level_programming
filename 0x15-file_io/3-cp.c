@@ -92,12 +92,12 @@ ssize_t read_and_copy_file(const char *from_filename,
 	free(buffer);
 	if (close(to_file) == -1)
 	{
-		dprintf(1, "Error: Can't close fd %s\n", to_filename);
+		dprintf(1, "Error: Can't close fd %ld\n", to_file);
 		exit(100);
 	}
 	if (close(from_file) == -1)
 	{
-		dprintf(1, "Error: Can't close fd %s\n", from_filename);
+		dprintf(1, "Error: Can't close fd %ld\n", from_file);
 		exit(100);
 	}
 
@@ -112,7 +112,7 @@ int main(int argc, char **av)
 	size_t buffsize = 1024;
 	if (argc != 3)
 	{
-		dprintf(STDOUT_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDOUT_FILENO, "Usage: cp %s file_to\n");
 		exit(97);
 	}
 
