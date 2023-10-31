@@ -57,7 +57,7 @@ ssize_t read_and_copy_file(const char *from_filename,
 		exit(98);
 	}
 
-	to_file = open(to_filename, O_RDWR | O_CREAT | O_TRUNC, 0664);
+	to_file = open(to_filename, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
 	if (to_file == -1 || to_filename == NULL)
 	{
