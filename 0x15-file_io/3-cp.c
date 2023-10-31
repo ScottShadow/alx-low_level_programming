@@ -78,14 +78,14 @@ ssize_t read_and_copy_file(const char *from_filename,
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_filename);
 			exit(99);
 		}
-		if (read_char == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_filename);
-			free(buffer);
-			close(to_file);
-			close(from_file);
-			exit(98);
-		}
+	}
+	if (read_char == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_filename);
+		free(buffer);
+		close(to_file);
+		close(from_file);
+		exit(98);
 	}
 
 	free(buffer);
