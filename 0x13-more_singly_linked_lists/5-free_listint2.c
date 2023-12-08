@@ -1,11 +1,12 @@
 #include "lists.h"
+#include "shell.h"
 /**
  * free_listint2 - frees a listint_t list.
  * @head: pointer to the head node
  */
-void free_listint2(listint_t **head)
+void free_listint2(env_t **head)
 {
-	listint_t *p;
+	env_t *p;
 
 	if (!head)
 		return;
@@ -14,6 +15,7 @@ void free_listint2(listint_t **head)
 	{
 		p = *head;
 		*head = (*head)->next;
+		free(p->str);
 		free(p);
 	}
 }
