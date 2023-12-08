@@ -22,6 +22,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head,
 	if (idx == 0)
 	{
 		newnode->next = *head;
+		newnode->prev = NULL;
 		*head = newnode;
 		return (newnode);
 	}
@@ -38,8 +39,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **head,
 	newnode->next = p->next;
 	newnode->prev = p;
 	p->next = newnode;
-	p = p->next;
-	p->prev = newnode;
+
+	if (newnode->next)
+		newnode->next->prev = newnode;
 
 	return (newnode);
 }
