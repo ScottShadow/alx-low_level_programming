@@ -1,4 +1,9 @@
 #include "hash_tables.h"
+
+/**
+ * hash_table_print - Prints the content of a hash table.
+ * @ht: The hash table to print.
+ */
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int i = 0;
