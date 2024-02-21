@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#my first makefile
+#creates and runs school
+
+#main programm
+all: main.c school.c
+	gcc main.c school.c -o school

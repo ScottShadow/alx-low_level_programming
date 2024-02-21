@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#builds school with cleanup and forced compilation
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic 
+
+#builds your executable
+all: $(OBJ)
+	$(CC) $^ $(CFLAGS)-o $(NAME)
+
+#deletes all Emacs and Vim temporary files along with the executable
+clean:
+	$(RM) *~ $(NAME)
+
+#deletes the object files
+oclean:
+	$(RM) $(OBJ)
+#deletes all Emacs and Vim temporary files, the executable, and the object files
+fclean: clean oclean
+
+#forces recompilation of all source files
+re: fclean all
+	

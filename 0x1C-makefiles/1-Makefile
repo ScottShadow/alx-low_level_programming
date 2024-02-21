@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#builds an executable with variables
+
+CC=gcc
+SRC=$(wildcard ./*.c)
+
+.PHONY: school
+#default target
+all: school
+	
+school: $(SRC)
+	$(CC) $^ -o $@
