@@ -2,9 +2,8 @@
 #builds an executable with variables
 
 CC=gcc
-SRC=$(wildcard ./*.c)
+SRC=main.c school.c
 
-.PHONY: school
 #default target
 all: school
 	
