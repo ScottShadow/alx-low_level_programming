@@ -12,6 +12,7 @@ int binary_search_helper(int *array, size_t beginning, size_t end, int value)
 {
 	size_t current = (beginning + end) / 2;
 	size_t i = 0;
+
 	if (array == NULL)
 		return (-1);
 
