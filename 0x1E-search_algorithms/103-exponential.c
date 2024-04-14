@@ -48,7 +48,8 @@ int binary_search(int *array, size_t size, int value)
 	return (binary_search_helper(array, 0, size - 1, value));
 }
 /**
- * exponential_search - Searches for a value in a sorted array using exponential search.
+ * exponential_search - Searches for a value in a sorted array using
+ * exponential search.
  * @array: Pointer to the sorted array to search.
  * @size: Size of the array.
  * @value: Value to search for.
