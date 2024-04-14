@@ -11,13 +11,13 @@
  */
 int linearjump_search(int *array, int start, int end, int value)
 {
-    for (; start <= end; start++)
-    {
-        printf("Value checked array[%d] = [%d]\n", start, array[start]);
-        if (array[start] == value)
-            return (start);
-    }
-    return (-1);
+	for (; start <= end; start++)
+	{
+		printf("Value checked array[%d] = [%d]\n", start, array[start]);
+		if (array[start] == value)
+			return (start);
+	}
+	return (-1);
 }
 /**
  * jump_search - searches for a value in an array
@@ -29,28 +29,28 @@ int linearjump_search(int *array, int start, int end, int value)
  */
 int jump_search(int *array, size_t size, int value)
 {
-    size_t i = 0;
-    size_t jump = sqrt(size);
+	size_t i = 0;
+	size_t jump = sqrt(size);
 
-    if (array == NULL)
-        return (-1);
+	if (array == NULL)
+		return (-1);
 
-    for (i = 0; i < size && (i + jump) < size; i += jump)
-    {
-        if (array[i] == value)
-            return (i);
+	for (i = 0; i < size && (i + jump) < size; i += jump)
+	{
+		if (array[i] == value)
+			return (i);
 
-        if (array[i] < value && array[i + jump] < value)
-        {
-            printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-            continue;
-        }
-        else
-        {
-            printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-            printf("Value found between indexes [%ld] and [%ld]\n", i, (i + jump));
-            return (linearjump_search(array, i, (i + jump), value));
-        }
-    }
-    return (linearjump_search(array, i, size, value));
+		if (array[i] < value && array[i + jump] < value)
+		{
+			printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+			continue;
+		}
+		else
+		{
+			printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+			printf("Value found between indexes [%ld] and [%ld]\n", i, (i + jump));
+			return (linearjump_search(array, i, (i + jump), value));
+		}
+	}
+	return (linearjump_search(array, i, size, value));
 }
